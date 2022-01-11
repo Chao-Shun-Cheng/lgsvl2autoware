@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>lgsvl2autoware</name>
+  <version>0.0.0</version>
+  <description>The lgsvl2autoware package</description>
+  <maintainer email="chao.shun.cheng.tw@gmail.com">Chao Shun Cheng</maintainer>
+  <author email="chao.shun.cheng.tw@gmail.com">Chao Shun Cheng</author>
+  <license>Apache-2.0</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>roscpp</build_depend>
+  <build_depend>nav_msgs</build_depend>
+  <build_depend>autoware_msgs</build_depend>
+  <build_depend>lgsvl_msgs</build_depend>
+  <build_depend>geometry_msgs</build_depend>
+  <build_export_depend>roscpp</build_export_depend>
+  <build_export_depend>nav_msgs</build_export_depend>
+  <build_export_depend>autoware_msgs</build_export_depend>
+  <build_export_depend>lgsvl_msgs</build_export_depend>
+  <build_export_depend>geometry_msgs</build_export_depend>
+  <exec_depend>roscpp</exec_depend>
+  <exec_depend>nav_msgs</exec_depend>
+  <exec_depend>autoware_msgs</exec_depend>
+  <exec_depend>lgsvl_msgs</exec_depend>
+  <exec_depend>geometry_msgs</exec_depend>
+
+</package>

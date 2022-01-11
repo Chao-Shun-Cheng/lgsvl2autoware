@@ -1,0 +1,7 @@
+<!-- -->
+<launch>
+  <arg name="namespace" default="/simulator/ground_truth"/>
+  <node pkg="lgsvl2autoware" type="ground_truth" name="ground_truth" output="screen" ns="$(arg namespace)"/>
+  <node pkg="detected_objects_visualizer" type="visualize_detected_objects" name="lgsvl2autoware_visualization"
+        output="screen" ns="$(arg namespace)"/>
+</launch>
