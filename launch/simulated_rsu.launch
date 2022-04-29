@@ -1,0 +1,19 @@
+<!-- -->
+<launch>
+  <arg name="namespace" default="/lgsvl/rsu"/>
+  <arg name="latency_upper" default="300"/>            <!-- The latency will be limited in this value. [ms] -->
+  <arg name="latency_lower" default="100"/>            <!-- The latency will be limited in this value. [ms] -->
+  <arg name="noise" default="1000"/>                <!-- The 2D position will be added noise which ranges in 1. [mm] -->       
+
+  <node pkg="lgsvl2autoware" type="simulated_rsu" name="simulated_rsu" output="screen" ns="$(arg namespace)">
+    <param name="latency_upper" value="$(arg latency_upper)" />
+    <param name="latency_lower" value="$(arg latency_lower)" />
+    <param name="noise" value="$(arg noise)" />
+  </node>
+
+  <node pkg="detected_objects_visualizer" type="visualize_detected_objects" name="simulated_rsu_visualization"
+          output="screen" ns="$(arg namespace)">
+      <param name="objects_src_topic" value="/objects"/>
+      <rosparam param="box_color">[116.,228.,255.,0.8]</rosparam>
+  </node>
+</launch>

@@ -1,8 +1,10 @@
 <!-- -->
 <launch>
-  <arg name="namespace" default="/simulator/ground_truth"/>
+  <arg name="namespace" default="/lgsvl/ground_truth"/>
+  
   <node pkg="lgsvl2autoware" type="ground_truth" name="ground_truth" output="screen" ns="$(arg namespace)"/>
-  <node pkg="detected_objects_visualizer" type="visualize_detected_objects" name="lgsvl2autoware_visualization"
+  
+  <node pkg="detected_objects_visualizer" type="visualize_detected_objects" name="groundtruth_visualization"
           output="screen" ns="$(arg namespace)">
       <param name="objects_src_topic" value="/objects"/>
       <rosparam param="box_color">[204.,153.,255.,0.8]</rosparam>

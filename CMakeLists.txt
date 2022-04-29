@@ -27,6 +27,10 @@ include_directories(
 add_executable(ground_truth src/ground_truth.cpp)
 target_link_libraries(ground_truth ${catkin_LIBRARIES})
 
+# simulated_rsu
+add_executable(simulated_rsu src/simulated_rsu.cpp)
+target_link_libraries(simulated_rsu ${catkin_LIBRARIES})
+
 # odom2vel
 add_executable(odom2vel src/odom2vel.cpp)
 target_link_libraries(odom2vel ${catkin_LIBRARIES})
