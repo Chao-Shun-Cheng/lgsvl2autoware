@@ -1,9 +1,9 @@
 <!-- -->
 <launch>
   <arg name="namespace" default="/lgsvl/rsu"/>
-  <arg name="latency_upper" default="300"/>            <!-- The latency will be limited in this value. [ms] -->
-  <arg name="latency_lower" default="100"/>            <!-- The latency will be limited in this value. [ms] -->
-  <arg name="noise" default="1000"/>                <!-- The 2D position will be added noise which ranges in 1. [mm] -->       
+  <arg name="latency_upper" default="0"/>            <!-- The latency will be limited in this value. [ms] -->
+  <arg name="latency_lower" default="10"/>            <!-- The latency will be limited in this value. [ms] -->
+  <arg name="noise" default="300"/>                <!-- The 2D position will be added noise which ranges in this value. [mm] -->       
 
   <node pkg="lgsvl2autoware" type="simulated_rsu" name="simulated_rsu" output="screen" ns="$(arg namespace)">
     <param name="latency_upper" value="$(arg latency_upper)" />

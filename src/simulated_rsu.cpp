@@ -7,14 +7,17 @@
 using namespace std;
 
 int latency_upper_, latency_lower_, noise_;
+float latency;
 autoware_msgs::DetectedObjectArray rsu;
 
 void callback(const autoware_msgs::DetectedObjectArray &msg)
 {
-    float latency = rand() % latency_upper_ + latency_lower_;
-    latency = latency > latency_upper_ ? latency_upper_ / 1000.0 : latency / 1000.0;
-    while (ros::Time::now().toSec() - msg.header.stamp.toSec() < latency) {}
-
+    if (latency_upper_ != 0) {
+        latency = rand() % latency_upper_ + latency_lower_;
+        latency = latency > latency_upper_ ? latency_upper_ / 1000.0 : latency / 1000.0;
+        while (ros::Time::now().toSec() - msg.header.stamp.toSec() < latency) {}
+    }
+    
     float x_noise = (rand() % (noise_ << 1) - noise_) / 1000.0;
     float y_noise = (rand() % (noise_ << 1) - noise_) / 1000.0;
 

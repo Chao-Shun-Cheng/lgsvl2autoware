@@ -35,6 +35,10 @@ target_link_libraries(simulated_rsu ${catkin_LIBRARIES})
 add_executable(odom2vel src/odom2vel.cpp)
 target_link_libraries(odom2vel ${catkin_LIBRARIES})
 
+# pointscloud
+add_executable(pointscloud src/pointscloud.cpp)
+target_link_libraries(pointscloud ${catkin_LIBRARIES})
+
 # nmea2enu
 install(PROGRAMS
   scripts/nmea2enu.py

@@ -31,8 +31,8 @@ def nmea2llh(sentence):
     #rospy.loginfo("I heard %s", sentence.sentence)
     split_sentence = sentence.sentence.split(',')
 
-    current_time_ = sentence.header.stamp
-    # current_time_ = rospy.get_rostime() # add by Kenny
+    # current_time_ = sentence.header.stamp
+    current_time_ = rospy.get_rostime() # add by Kenny
 
     # only grep $GPGGA sentence
     if split_sentence[0] == "$GPGGA":

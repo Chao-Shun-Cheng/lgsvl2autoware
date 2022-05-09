@@ -8,6 +8,7 @@ void gps_odometry_callback(const nav_msgs::Odometry &msg)
 {
     data.header = msg.header;
     data.twist = msg.twist.twist;
+    data.header.stamp = ros::Time::now();
 }
 
 int main(int argc, char **argv)
